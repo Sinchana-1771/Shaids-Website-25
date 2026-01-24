@@ -51,8 +51,8 @@ export default function Faculty() {
         {/* Top 3 Faculty - Pyramid Layout */}
         <div className="flex flex-col items-center justify-center mb-16 w-full">
           <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-10 items-center justify-center w-full px-4">
-            {/* Left Faculty */}
-            <div className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10">
+            {/* Left Faculty - Preeti */}
+            <div className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10 w-full max-w-xs order-2 md:order-1">
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-soft-aqua shadow-lg shadow-soft-aqua/50">
                 <img
                   src={mentors[1].image}
@@ -68,9 +68,9 @@ export default function Faculty() {
               </p>
             </div>
 
-            {/* Center Faculty - Positioned Higher */}
-            <div className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-soft-aqua/40 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/80 transition-all duration-300 shadow-lg shadow-soft-aqua/20 md:-translate-y-8">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-soft-aqua shadow-lg shadow-soft-aqua/60">
+            {/* Center Faculty - HOD */}
+            <div className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10 w-full max-w-xs order-1 md:order-2 md:-translate-y-8">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-soft-aqua shadow-lg shadow-soft-aqua/50">
                 <img
                   src={mentors[0].image}
                   alt={mentors[0].name}
@@ -85,8 +85,8 @@ export default function Faculty() {
               </p>
             </div>
 
-            {/* Right Faculty */}
-            <div className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10">
+            {/* Right Faculty - Anil */}
+            <div className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10 w-full max-w-xs order-3">
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-soft-aqua shadow-lg shadow-soft-aqua/50">
                 <img
                   src={mentors[2].image}
@@ -105,13 +105,13 @@ export default function Faculty() {
         </div>
 
         {/* Remaining Faculty in Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-8 md:px-12 lg:px-16 w-full max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-8 md:px-12 lg:px-16 w-full">
           {mentors.slice(3).map((mentor, index) => (
             <div
               key={index + 3}
-              className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10"
+              className="flex flex-col items-center bg-steel-blue-tint/40 backdrop-blur-sm border border-primary-cyan/30 p-4 rounded-2xl hover:bg-steel-blue-tint/60 hover:border-soft-aqua/60 transition-all duration-300 shadow-lg shadow-primary-cyan/10 h-full"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-soft-aqua shadow-lg shadow-soft-aqua/50">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-soft-aqua shadow-lg shadow-soft-aqua/50 flex-shrink-0">
                 <img
                   src={mentor.image}
                   alt={mentor.name}
