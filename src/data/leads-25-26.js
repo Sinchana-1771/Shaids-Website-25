@@ -1,23 +1,3 @@
-// --- IMPORTS FOR 25-26 TEAM ---
-import Ajay_Jadhav from "../assets/images/team-members-25-26/ajay-president.jpg";
-import Aayush_Thoke from "../assets/images/team-members-25-26/aayush-general-secretary.jpg";
-import Janmeshree_Gaokar from "../assets/images/team-members-25-26/janmashree-co-general-secretary.jpg";
-import Vidhan_Chavan from "../assets/images/team-members-25-26/vidhan-treasurer.jpg";
-import Shravan_Bhatkar from "../assets/images/team-members-25-26/shravan-convener.jpg";
-import Divesh_Dalvi from "../assets/images/team-members-25-26/divesh-tech-head.jpg";
-import Yukta_Parab from "../assets/images/team-members-25-26/yukta-graphics-head.jpg";
-import Rutuja_Sawant from "../assets/images/team-members-25-26/rutuja-planning-head.jpg";
-import Atharva_Vadak from "../assets/images/team-members-25-26/atharva-publicity-head.jpg";
-import Dhanushka_Govindwar from "../assets/images/team-members-25-26/dhanushka-cultural-head.jpg";
-import Vaibhavi_Patil from "../assets/images/team-members-25-26/vaibhavi-socialmedia-head.jpg";
-import Shrusti_Korde from "../assets/images/team-members-25-26/shrusti-sports-head.jpg";
-import Bhavesh_Patil from "../assets/images/team-members-25-26/bhavesh-sports-head.jpg";
-import Sakshi_Bhoir from "../assets/images/team-members-25-26/sakshi-documentation-head.jpg";
-import Parth_Gadre from "../assets/images/team-members-25-26/parth-documentation-head.jpg";
-import Ganraj_Mali from "../assets/images/team-members-25-26/ganraj-sponsorship-head.jpg";
-import Devesh_Mokashi from "../assets/images/team-members-25-26/devesh-sponsorship-head.jpg";
-
-
 const leads_25_26 = [
   {
     name: "Ajay Jadhav",
@@ -108,7 +88,7 @@ const leads_25_26 = [
     designation: "Sports Head",
     avatar: "https://ik.imagekit.io/igsnxowfs/leads/Leads%2025-26/bhavesh-sports-head.jpg?updatedAt=1760494587278",
     instagramUrl: "https://www.instagram.com/bhavesh_.058/",
-    linkedinUrl: "https://www.linkedin.com/company/shaids-dmce/ ",
+    linkedinUrl: "https://www.linkedin.com/company/shaids-dmce/",
   },
   {
     name: "Sakshi Bhoir",
@@ -122,7 +102,7 @@ const leads_25_26 = [
     designation: "Documentation Head",
     avatar: "https://ik.imagekit.io/igsnxowfs/leads/Leads%2025-26/parth-documentation-head.jpg?updatedAt=1760494601692",
     instagramUrl: "https://www.instagram.com/_parthgadre_/",
-    linkedinUrl: "https://www.linkedin.com/company/shaids-dmce/ ",
+    linkedinUrl: "https://www.linkedin.com/company/shaids-dmce/",
   },
   {
     name: "Ganraj Mali",
@@ -141,5 +121,3 @@ const leads_25_26 = [
 ];
 
 export default leads_25_26;
-
-  
