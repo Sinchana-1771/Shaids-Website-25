@@ -13,21 +13,35 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter the papers based on the selected semester and search query
-  const filteredPapers =
-    selectedSemester && papers[selectedSemester]
-      ? papers[selectedSemester].filter((paper) =>
-          paper.subject.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-      : [];
+  let filteredPapers = [];
+
+if (selectedSemester && !searchQuery) {
+  // Only semester selected
+  filteredPapers = papers[selectedSemester] || [];
+}
+
+if (!selectedSemester && searchQuery) {
+  // Only search (global search)
+  const all = Object.values(papers).flat();
+  filteredPapers = all.filter((paper) =>
+    paper.subject.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+}
+
+if (selectedSemester && searchQuery) {
+  // Both selected
+  filteredPapers = (papers[selectedSemester] || []).filter((paper) =>
+    paper.subject.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+}
 
   return (
-    <div className="flex flex-col min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]
-from-purple-900/20 via-[#020617] to-black text-white">
+    <div className="flex flex-col min-h-screen
+bg-[linear-gradient(180deg,#0B1220_0%,#0F1A2E_40%,#020617_100%)] text-white">
        <Navbar />
 
       {/* DESIGNED HERO HEADER */}
-<header className="relative overflow-hidden
-bg-gradient-to-br from-[#0B1220] via-[#0F1A2E] to-[#020617]">
+<header className="relative overflow-hidden bg-transparent backdrop-blur-sm">
 
   {/* glow blobs */}
   <div className="absolute inset-0">
