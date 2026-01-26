@@ -81,6 +81,7 @@ export default {
     animation: {
       "star-movement-bottom": "star-movement-bottom linear infinite alternate",
       "star-movement-top": "star-movement-top linear infinite alternate",
+      float: "float 6s ease-in-out infinite",
     },
     keyframes: {
       "star-movement-bottom": {
@@ -91,6 +92,10 @@ export default {
         "0%": { transform: "translate(0%, 0%)", opacity: "1" },
         "100%": { transform: "translate(100%, 0%)", opacity: "0" },
       },
+      float: {
+  "0%, 100%": { transform: "translateY(0px)" },
+  "50%": { transform: "translateY(-8px)" },
+},
     },
   },
 
