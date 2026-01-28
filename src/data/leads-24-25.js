@@ -1,22 +1,3 @@
-// --- IMPORTS FOR 24-25 TEAM ---
-import Sahil_Jadhav from "../assets/images/team-members-24-25/sahil-jadhav-president.jpg";
-import Raj_Sangle from "../assets/images/team-members-24-25/raj-sangle-general-secretary.jpg";
-import Siddhi_Kambli from "../assets/images/team-members-24-25/siddhi-kambli-co-general-secretary.png";
-import Sadashiv_Sawant from "../assets/images/team-members-24-25/sadashiv-sawant-treasurer.jpg";
-import Samruddhi_Naralkar from "../assets/images/team-members-24-25/samruddhi-naralkar-convener.jpg";
-import Ayush_Bhosale from "../assets/images/team-members-24-25/ayush-bhosale-tech-head.jpg";
-import Aryan_Gawade from "../assets/images/team-members-24-25/aryan-gawade-graphics-head.jpg";
-import Rutuja_Wavdhane from "../assets/images/team-members-24-25/rutuja-wavdhane-publicity-head.jpg";
-import Anushka_Jagadale from "../assets/images/team-members-24-25/anushka-jagadale-publicity-head.jpg";
-import Shraddha_Nimunkar from "../assets/images/team-members-24-25/shraddha-nimunkar-cultural-head.jpg";
-import Piyush_Dokle from "../assets/images/team-members-24-25/piyush-dokle-social-media-head.jpg";
-import Rishita_Chavan from "../assets/images/team-members-24-25/rishita-chavan-sports-head.jpg";
-import Sairaj_Unde from "../assets/images/team-members-24-25/sairaj-unde-sports-head.jpg";
-import Anuj_Jadhav from "../assets/images/team-members-24-25/anush-jadhav-documentation-head.jpg";
-import Nimisha_Patil from "../assets/images/team-members-24-25/nimisha-patil-documentation-head.jpg";
-import Mandar_Salvi from "../assets/images/team-members-24-25/mandar-salvi-sponsorship-head.jpg";
-import Bhumika_Bandkar from "../assets/images/team-members-24-25/bhumika-bandkar-sponsorship-head.png";
-
 const leads_24_25 = [
   {
     name: "Sahil Jadhav",
@@ -140,4 +121,3 @@ const leads_24_25 = [
 ];
 
 export default leads_24_25;
-

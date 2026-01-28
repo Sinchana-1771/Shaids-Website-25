@@ -1,119 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Sora:wght@400;500&display=swap');
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --font-outfit: 'Outfit', sans-serif;
-  --font-sora: 'Sora', sans-serif;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --radius: 0.625rem;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+/* 1. Custom Fonts */
+@font-face {
+  font-family: "Gunterz";
+  src: url("./assets/fonts/Gunterz-Regular.ttf");
+}
+@font-face {
+  font-family: "Nord-bold";
+  src: url("./assets/fonts/NORD-Bold.ttf");
 }
 
-@theme {
-  --font-outfit: var(--font-outfit);
-  --font-sora: var(--font-sora);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@layer base {
-  * {
-    @apply border-none outline-none;
+/* 2. Custom Components - Put @apply here to fix errors */
+@layer components {
+  .custom-input {
+    @apply border border-[#455668] bg-[#121427] rounded-lg py-2 transition-all;
   }
-  
-  html, body {
-    @apply bg-[#020617] text-white w-full font-sora;
-    -webkit-overflow-scrolling: touch;
+  .custom-input:focus-within {
+    @apply border-[#3B82F6];
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-outfit);
-    font-weight: 700;
+  .custom-input.error {
+    @apply border-red-500;
   }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-@keyframes shimmer-sweep {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
+/* 3. Global Styles */
+body {
+  background-color: black;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-@keyframes blue-shimmer {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
+/* 4. HackHive Animations - Define them here so JSX can use them */
+@keyframes star-pop {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
 }
 
-@keyframes cyan-text-glow-pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 8px rgba(76, 195, 230, 0.5)) drop-shadow(0 0 20px rgba(76, 195, 230, 0.3));
+@keyframes border-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(168,85,247,0.6), inset 0 0 20px rgba(99,102,241,0.4); }
+  50% { box-shadow: 0 0 30px rgba(168,85,247,0.9), inset 0 0 30px rgba(99,102,241,0.6); }
+}
+
+/* 5. Embla Carousel */
+.embla { overflow: hidden; width: 100%; }
+.embla__container { display: flex; transition: transform 0.3s ease-in-out; gap: 16px; }
+.embla__slide { flex: 0 0 auto; border-radius: 16px; }
+/* Add these to your existing index.css */
+
+@keyframes star-pop {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+@keyframes border-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(168,85,247,0.6), inset 0 0 20px rgba(99,102,241,0.4); 
   }
-  50% {
-    filter: drop-shadow(0 0 15px rgba(76, 195, 230, 0.8)) drop-shadow(0 0 35px rgba(76, 195, 230, 0.5)) drop-shadow(0 0 50px rgba(111, 215, 242, 0.3));
+  50% { 
+    box-shadow: 0 0 30px rgba(168,85,247,0.9), inset 0 0 30px rgba(99,102,241,0.6); 
   }
-}
-
-@keyframes text-glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 15px rgba(76, 195, 230, 0.4), 0 0 30px rgba(76, 195, 230, 0.2);
-  }
-  50% {
-    text-shadow: 0 0 25px rgba(127, 217, 242, 0.6), 0 0 50px rgba(76, 195, 230, 0.4);
-  }
-}
-
-@keyframes sub-text-glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(76, 195, 230, 0.2);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(76, 195, 230, 0.4);
-  }
-}
-
-@keyframes float-equation {
-  0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.08; }
-  25% { transform: translateY(-30px) translateX(15px) rotate(5deg); opacity: 0.15; }
-  50% { transform: translateY(-10px) translateX(-10px) rotate(-3deg); opacity: 0.1; }
-}
-
-.cyan-text-glow-animate { animation: cyan-text-glow-pulse 3s ease-in-out infinite; }
-.text-glow-animate { animation: text-glow-pulse 3s ease-in-out infinite; }
-.sub-text-glow-animate { animation: sub-text-glow-pulse 3s ease-in-out infinite; }
-.animate-float-equation { animation: float-equation 20s ease-in-out infinite; }
-
-.premium-text {
-  background: linear-gradient(90deg, #94a3b8 0%, #e2e8f0 50%, #94a3b8 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer-sweep 8s linear infinite;
-}
-
-.glass-card {
-  background: rgba(2, 6, 23, 0.9);
-  backdrop-filter: blur(12px);
 }

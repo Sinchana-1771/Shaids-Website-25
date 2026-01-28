@@ -1,23 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import img1 from "../assets/images/milestone/img1.jpg";
-import img2 from "../assets/images/milestone/img2.jpg";
-import img3 from "../assets/images/milestone/img3.jpg";
-import img4 from "../assets/images/milestone/img4.jpg";
-import img5 from "../assets/images/milestone/img5.jpg";
-import img6 from "../assets/images/milestone/img6.jpg";
-import img7 from "../assets/images/milestone/img7.jpg";
-import img8 from "../assets/images/milestone/img8.jpg";
-import img9 from "../assets/images/milestone/img9.jpg";
-import img10 from "../assets/images/milestone/img10.jpg";
 import Navbar from "../components/Common/Navbar";
 import Footer from "../components/Common/Footer";
 
 const Milestone = () => {
   const navigate = useNavigate();
 
-  const images = [img1, img2, img3, img4, img5, img7, img8, img9, img10, img6];
+  // CDN / URL-based images
+  const images = [
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img1.jpg?updatedAt=1760585662454",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img2.jpg?updatedAt=1760585662485",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img3.jpg?updatedAt=1760585669065",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img4.jpg?updatedAt=1760585663196",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img5.jpg?updatedAt=1760585662943",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img6.jpg?updatedAt=1760585663304",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img7.jpg?updatedAt=1760585667003",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img8.jpg?updatedAt=1760585664285",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img9.jpg?updatedAt=1760585663781",
+    "https://ik.imagekit.io/igsnxowfs/events/2023-24/Milestone/img10.jpg?updatedAt=1760585663499",
+  ];
 
   return (
     <>
@@ -61,6 +63,7 @@ const Milestone = () => {
               <img
                 src={src}
                 alt={`Milestone Event ${index + 1}`}
+                loading="lazy"
                 className="w-full h-52 object-cover rounded-xl group-hover:opacity-90 transition"
               />
             </div>
