@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Lottie from "lottie-react";
 
-import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
 import MemberCard from "../components/Teams/MemberCard";
 import teamAnimation from "../assets/animations/team/team-animation.json";
 
@@ -17,7 +17,7 @@ const Team = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0B1220]">
-      <Navbar />
+      <Navbar show={true} />
 
       {/* HERO */}
       <section className="relative overflow-hidden">

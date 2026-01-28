@@ -6,8 +6,8 @@ import { ArrowLeft } from "lucide-react";
 import mile1 from "../assets/images/mile1.json";
 import technitudeAnimation from "../assets/images/mile.json";
 import wrkshop from "../assets/images/wrkshop.json";
-import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
 
 export default function Events() {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export default function Events() {
 
   return (
     <>
-      <Navbar />
+      <Navbar show={true} />
 
       {/* Back Button */}
       <button

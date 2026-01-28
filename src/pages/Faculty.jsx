@@ -1,8 +1,8 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react"; // ✅ Added missing import
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
 
 export default function Faculty() {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function Faculty() {
 
   return (
     <>
-      <Navbar />
+      <Navbar show={true} />
 
       {/* Back Button */}
       <button

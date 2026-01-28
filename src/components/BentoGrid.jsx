@@ -83,7 +83,7 @@ export default function BentoGrid({ onAboutClick }) {
               isLogo={true}
               className="col-span-6 row-span-2 lg:col-span-7"
               delay={0.1}
-              onClick={onAboutClick}
+              onClick={() => navigate('/about-us')}
             />
           <BentoCard 
             title="Team" 
@@ -134,7 +134,7 @@ export default function BentoGrid({ onAboutClick }) {
               onClick={() => navigate('/events')}
             />
             <BentoCard 
-                title="HackHive" 
+                title="HackHive 2026" 
                 subtitle="Our flagship hackathon"
                 bgImage="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/c8671fa2-2465-4069-88ca-8b2a12bf859a/image-1769174716871.png?width=8000&height=8000&resize=contain"
                 className="col-span-5 lg:col-span-5 lg:order-5"

@@ -16,7 +16,7 @@ export function Footer({ show = true }) {
                 <span className="text-xl sm:text-2xl tracking-wide font-sora font-semibold" style={{ color: '#4CC3E6' }}>SHAIDS</span>
               </div>
               <p className="text-sm leading-relaxed font-sora font-light" style={{ color: '#9FB1C8' }}>
-                Empowering DMCE in AI & Data Science through innovation.<br className="hidden sm:block" />Join us in learning and collaboration.
+                 in AI & Data Science through innovation.<br className="hidden sm:block" />Join us in learning and collaboration.
               </p>
             </div>
             <div className="flex flex-col items-start md:items-end gap-3 md:gap-4 font-sora">

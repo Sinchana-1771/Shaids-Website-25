@@ -3,8 +3,8 @@ import { Download } from "lucide-react";
 import papers from "../data/academics"; // Import the data file
 import Lottie from "lottie-react";
 import academic from "../assets/academic.json";
-import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
 
 const semesters = Object.keys(papers); // Extract semester names from the keys
 
@@ -38,7 +38,7 @@ if (selectedSemester && searchQuery) {
   return (
     <div className="flex flex-col min-h-screen
 bg-[linear-gradient(180deg,#0B1220_0%,#0F1A2E_40%,#020617_100%)] text-white">
-       <Navbar />
+       <Navbar show={true} />
 
       {/* DESIGNED HERO HEADER */}
 <header className="relative overflow-hidden bg-transparent backdrop-blur-sm">
