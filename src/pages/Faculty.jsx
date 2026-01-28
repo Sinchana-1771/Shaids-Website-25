@@ -12,11 +12,9 @@ export default function Faculty() {
     { name: "Dr. Preeti Nitin Jain", image: "https://ik.imagekit.io/igsnxowfs/faculty/pretty.jpg?updatedAt=1760495358975", exp: "Assistant Professor" },
     { name: "Mr. Anil Satyadeo Londhe", image: "https://ik.imagekit.io/igsnxowfs/faculty/Anil-sir.jpeg?updatedAt=1760495358583", exp: "Assistant Professor" },
     { name: "Mrs. Deepti Jeetu Janjani", image: "https://ik.imagekit.io/igsnxowfs/faculty/Deepti-maam.jpeg?updatedAt=1760495358712", exp: "Assistant Professor" },
-    { name: "Mrs. Anjali Devi Milind Patil", image: "https://ik.imagekit.io/igsnxowfs/faculty/Anjali-maam.jpeg?updatedAt=1760495358743", exp: "Assistant Professor" },
+    { name: "Dr. Anjali Devi Milind Patil", image: "https://ik.imagekit.io/igsnxowfs/faculty/Anjali-maam.jpeg?updatedAt=1760495358743", exp: "Assistant Professor" },
     { name: "Mrs. Irin Anna Solomone", image: "https://ik.imagekit.io/igsnxowfs/faculty/irin.jpg?updatedAt=1760495359032", exp: "Assistant Professor" },
     { name: "Mrs. Poonam Amit Kamble", image: "https://ik.imagekit.io/igsnxowfs/faculty/poonam.jpg?updatedAt=1760495359116", exp: "Assistant Professor" },
-    // { name: "Mrs. Aarti Raman Sonawane", image: "https://ik.imagekit.io/igsnxowfs/faculty/arti.jpg?updatedAt=1760495359178", exp: "Assistant Professor" },
-    // { name: "Mrs. Swati Sankesh Parhad", image: "https://ik.imagekit.io/igsnxowfs/faculty/Swati.jpeg?updatedAt=1760495359013", exp: "Assistant Professor" },
     { name: "Mrs. Aparna Tiwari", image: "https://ik.imagekit.io/igsnxowfs/faculty/Aparna%20Tiwari.jpg?updatedAt=1760495238311", exp: "Assistant Professor" },
     { name: "Mrs. Sphurti V Atram", image: "https://ik.imagekit.io/igsnxowfs/faculty/Sphurti_Atram.jpg?updatedAt=1760495237100", exp: "Assistant Professor" },
     { name: "Mrs. Minakshi Umate", image: "https://ik.imagekit.io/igsnxowfs/faculty/Minakshi_U.jpg?updatedAt=1760495236676", exp: "Assistant Professor" },
@@ -26,7 +24,9 @@ export default function Faculty() {
     { name: "Mrs. Aruna Divekar", image: "https://ik.imagekit.io/igsnxowfs/faculty/Aruna_A.jpg?updatedAt=1760495236083", exp: "Assistant Professor" },
     { name: "Mrs. Shikha Singh", image: "https://ik.imagekit.io/igsnxowfs/faculty/Shikha_s.jpeg?updatedAt=1760495237392", exp: "Assistant Professor" },
     { name: "Mrs. Mridul Saxena", image: "https://ik.imagekit.io/igsnxowfs/faculty/Mridul_S.jpg?updatedAt=1760495236060", exp: "Assistant Professor" },
-    { name: "Mrs. Aparna Raut", image: "https://ik.imagekit.io/igsnxowfs/faculty/Aparna%20Raut.jpg?updatedAt=1760495235669", exp: "Assistant Professor" },
+    { name: "Ms. Aparna Raut", image: "https://ik.imagekit.io/igsnxowfs/faculty/11036b3b-8cb7-43df-a977-f04508758670.jpg", exp: "Assistant Professor" },
+    { name: "Mrs. Archana Mahindrakar", image: "", exp: "Assistant Professor" },
+    { name: "Mrs. Dnyanada Dafale", image: "", exp: "Assistant Professor" },
   ];
 
   return (
