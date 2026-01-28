@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const BentoCard = ({ title, subtitle, bgImage, className, delay = 0, isLogo = false, opacity = "", onClick, customOverlay = null, isHighlighted = false }) => {
   return (
@@ -68,6 +68,8 @@ const BentoCard = ({ title, subtitle, bgImage, className, delay = 0, isLogo = fa
 }
 
 export default function BentoGrid({ onAboutClick }) {
+    const navigate = useNavigate();
+
     return (
       <section className="relative z-10 px-4 sm:px-8 md:px-12 lg:px-24 py-16 md:py-24 bg-transparent overflow-hidden">
         <div className="max-w-[1300px] mx-auto flex flex-col gap-8 lg:gap-12">
@@ -89,6 +91,7 @@ export default function BentoGrid({ onAboutClick }) {
             bgImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
             className="col-span-6 lg:col-span-5"
             delay={0.2}
+            onClick={() => navigate('/team')}
           />
             <BentoCard 
               title="Faculty" 
@@ -96,6 +99,7 @@ export default function BentoGrid({ onAboutClick }) {
               bgImage="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
               className="col-span-6 lg:col-span-5 lg:order-3"
               delay={0.3}
+              onClick={() => navigate('/faculty')}
             />
 
             {/* Row 3: Magazine & Achievements (Moved up for mobile flow) */}
@@ -117,6 +121,7 @@ export default function BentoGrid({ onAboutClick }) {
               bgImage="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/dea7b64c-74cc-475f-9976-fc7e3506d90e/image-1769189468896.png?width=8000&height=8000&resize=contain"
               className="col-span-7 lg:col-span-7 lg:order-7"
               delay={0.7}
+              onClick={() => navigate('/achievements')}
             />
 
             {/* Row 4: Events & HackHive (Moved down for mobile flow) */}
@@ -126,6 +131,7 @@ export default function BentoGrid({ onAboutClick }) {
               bgImage="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/dea7b64c-74cc-475f-9976-fc7e3506d90e/image-1769189360473.png?width=8000&height=8000&resize=contain"
               className="col-span-7 lg:col-span-7 lg:order-4 border-blue-400/20"
               delay={0.4}
+              onClick={() => navigate('/events')}
             />
             <BentoCard 
                 title="HackHive" 
@@ -147,6 +153,7 @@ export default function BentoGrid({ onAboutClick }) {
               bgImage="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800"
               className="col-span-12 lg:col-span-12 lg:order-8 mt-2 lg:mt-0"
               delay={0.8}
+              onClick={() => navigate('/academics')}
             />
         </div>
       </div>
