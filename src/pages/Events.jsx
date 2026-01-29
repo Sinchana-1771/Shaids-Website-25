@@ -17,7 +17,7 @@ export default function Events() {
   const handleWorkshopClick = () => navigate("/workshop");
 
   return (
-    <>
+    <div className="bg-bgGradient">
       <Navbar show={true} />
 
       {/* Back Button */}
@@ -136,6 +136,6 @@ export default function Events() {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 }
