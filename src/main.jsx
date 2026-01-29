@@ -19,6 +19,8 @@ import Credits from "./pages/Credits.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import Academics from "./pages/Academics.jsx";
 import Hackathon from "./pages/Hackathon.jsx";
+import Hackive from "./pages/Hackive.jsx";
+import BeyondBytes from "./pages/BeyondBytes.jsx";
 import Problems from "./pages/Problems.jsx";
 import { ReactLenis } from "lenis/react";
 
@@ -40,6 +42,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="hackhive" element={<Hackathon />} />
           <Route path="/milestone" element={<Milestone />} />
           <Route path="/workshop" element={<Wrkshop />} />
+          <Route path="/hackive" element={<Hackive />} />
+          <Route path="/beyond-bytes" element={<BeyondBytes />} />
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/credits" element={<Credits />} />
           <Route path="/about-us" element={<AboutPage />} />

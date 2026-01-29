@@ -9,6 +9,7 @@
   font-family: "Gunterz";
   src: url("./assets/fonts/Gunterz-Regular.ttf");
 }
+
 @font-face {
   font-family: "Nord-bold";
   src: url("./assets/fonts/NORD-Bold.ttf");
@@ -19,9 +20,11 @@
   .custom-input {
     @apply border border-[#455668] bg-[#121427] rounded-lg py-2 transition-all;
   }
+
   .custom-input:focus-within {
     @apply border-[#3B82F6];
   }
+
   .custom-input.error {
     @apply border-red-500;
   }
@@ -36,33 +39,338 @@ body {
 
 /* 4. HackHive Animations - Define them here so JSX can use them */
 @keyframes star-pop {
-  0% { transform: scale(0) rotate(0deg); opacity: 0; }
-  50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
-  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 @keyframes border-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(168,85,247,0.6), inset 0 0 20px rgba(99,102,241,0.4); }
-  50% { box-shadow: 0 0 30px rgba(168,85,247,0.9), inset 0 0 30px rgba(99,102,241,0.6); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), inset 0 0 20px rgba(99, 102, 241, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.9), inset 0 0 30px rgba(99, 102, 241, 0.6);
+  }
 }
 
 /* 5. Embla Carousel */
-.embla { overflow: hidden; width: 100%; }
-.embla__container { display: flex; transition: transform 0.3s ease-in-out; gap: 16px; }
-.embla__slide { flex: 0 0 auto; border-radius: 16px; }
-/* Add these to your existing index.css */
-
-@keyframes star-pop {
-  0% { transform: scale(0) rotate(0deg); opacity: 0; }
-  50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
-  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+.embla {
+  overflow: hidden;
+  width: 100%;
 }
 
-@keyframes border-glow {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(168,85,247,0.6), inset 0 0 20px rgba(99,102,241,0.4); 
+.embla__container {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 16px;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  border-radius: 16px;
+}
+
+/* New Events Styles */
+:root {
+  --background: #0a0e17;
+  --foreground: #ededed;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
   }
-  50% { 
-    box-shadow: 0 0 30px rgba(168,85,247,0.9), inset 0 0 30px rgba(99,102,241,0.6); 
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
   }
+}
+
+.event-glow-purple {
+  box-shadow: 0 0 60px 10px rgba(168, 85, 247, 0.4);
+}
+
+.event-glow-yellow {
+  box-shadow: 0 0 60px 10px rgba(234, 179, 8, 0.4);
+}
+
+.event-glow-green {
+  box-shadow: 0 0 60px 10px rgba(34, 197, 94, 0.4);
+}
+
+.event-glow-blue {
+  box-shadow: 0 0 60px 10px rgba(59, 130, 246, 0.4);
+}
+
+.event-glow-pink {
+  box-shadow: 0 0 60px 10px rgba(236, 72, 153, 0.4);
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Merging body styles - taking priorities from new events but keeping existing properties */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  /* Existing styles */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== Events Carousel - Strict Cyan Neon Theme ===== */
+
+/* Theme Color Variable */
+:root {
+  --neon-cyan: #4fd1ff;
+  --neon-glow: rgba(79, 209, 255, 0.6);
+  --neon-glow-strong: rgba(79, 209, 255, 0.9);
+}
+
+/* Carousel page background */
+.events-carousel-bg {
+  background: linear-gradient(135deg, #000000 0%, #0a0a1a 40%, #0d1a2a 100%);
+  min-height: 100vh;
+}
+
+/* Neon pulse animation for active elements */
+@keyframes neon-pulse-cyan {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px var(--neon-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--neon-cyan), 0 0 50px var(--neon-glow-strong);
+  }
+}
+
+/* Event Title Styling */
+.event-title {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* Base carousel circle */
+.carousel-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #050510 100%);
+  border: 3px solid var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 240px;
+  height: 240px;
+}
+
+@media (min-width: 768px) {
+  .carousel-circle {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-circle {
+    width: 420px;
+    height: 420px;
+  }
+}
+
+/* Active center circle */
+.carousel-circle-active {
+  transform: scale(1.1);
+  opacity: 1;
+  box-shadow:
+    0 0 30px var(--neon-glow),
+    0 0 60px rgba(79, 209, 255, 0.3),
+    inset 0 0 40px rgba(79, 209, 255, 0.1);
+  animation: neon-pulse-cyan 3s ease-in-out infinite;
+  z-index: 30;
+}
+
+/* Inactive top/bottom circles */
+.carousel-circle-inactive {
+  transform: scale(0.85);
+  opacity: 0.4;
+  border-color: rgba(79, 209, 255, 0.3);
+  box-shadow: 0 0 15px rgba(79, 209, 255, 0.15);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Small Navigation Circles */
+.nav-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(79, 209, 255, 0.4);
+  background: rgba(10, 10, 20, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(79, 209, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+  .nav-circle {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.nav-circle:hover,
+.nav-circle-active {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow:
+    0 0 15px var(--neon-glow),
+    0 0 30px var(--neon-glow),
+    inset 0 0 10px var(--neon-glow);
+  transform: scale(1.1);
+  background: rgba(79, 209, 255, 0.25);
+}
+
+.nav-circle-active {
+  background: rgba(79, 209, 255, 0.25);
+}
+
+/* Explore Button */
+.explore-btn {
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: none;
+  background: white;
+  color: #0a0a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--neon-glow);
+}
+
+@media (min-width: 768px) {
+  .explore-btn {
+    padding: 12px 32px;
+    font-size: 14px;
+  }
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--neon-glow-strong);
+}
+
+/* Gallery Styling */
+.event-detail-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 20px 40px;
+  /* Strong mobile fix for navbar overlap */
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .event-detail-hero {
+    min-height: auto;
+    /* Remove height constraint on desktop to prevent shifting */
+    padding: 100px 40px 20px;
+    /* Original desktop padding */
+  }
+}
+
+.event-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  padding: 20px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .event-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 30px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Original desktop grid */
+    padding: 10px 20px 60px;
+  }
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .gallery-card {
+    border-radius: 16px;
+  }
+}
+
+.event-gallery-grid .gallery-card {
+  aspect-ratio: 4/3;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .gallery-img {
+    border-radius: 12px;
+  }
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--neon-cyan);
 }

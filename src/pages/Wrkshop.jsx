@@ -49,40 +49,42 @@ const Wrkshop = () => {
       {/* Back Button to Events Page */}
       <button
         onClick={() => navigate("/events")}
-        className="fixed top-4 left-6 sm:left-20 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"
+        className="fixed top-4 left-6 sm:left-20 z-50 flex items-center text-white hover:text-cyan-400 transition-colors"
       >
         <ArrowLeft className="w-8 h-8 mr-3" />
         <span className="hidden sm:inline font-Outfit"></span>
       </button>
 
-      <div className="bg-bgGradient min-h-screen flex flex-col items-center p-6 md:p-10">
-        <h1 className="text-purple-400 text-4xl md:text-6xl text-center font-NordBold mb-6 mt-10">
-          BEYOND BYTES
-        </h1>
+      {/* Main Content */}
+      <div className="bg-bgGradient min-h-screen">
+        <div className="event-detail-hero">
+          <h1 className="text-cyan-400 text-4xl sm:text-5xl lg:text-8xl text-center font-NordBold mb-6 drop-shadow-[0_0_15px_rgba(79,209,255,0.4)]">
+            BEYOND BYTES
+          </h1>
 
-        <p className="text-white text-center font-Outfit max-w-3xl md:max-w-6xl mb-8">
-          Beyond Bytes is an immersive workshop designed to bridge the gap
-          between imagination and innovation. Hosted under the visionary Shaids
-          Department, this hands-on session dives into cutting-edge technology,
-          equipping participants with practical skills and insights. Whether
-          you're a budding enthusiast or a seasoned coder, Beyond Bytes offers a
-          unique opportunity to explore the latest trends, tools, and techniques
-          in technology. Join us to unlock your potential and transform ideas
-          into reality!
-        </p>
+          <p className="text-white text-center font-Outfit max-w-4xl lg:max-w-6xl mb-8 px-4 leading-relaxed">
+            Beyond Bytes is an immersive workshop designed to bridge the gap
+            between imagination and innovation. Hosted under the visionary Shaids
+            Department, this hands-on session dives into cutting-edge technology,
+            equipping participants with practical skills and insights. Whether
+            you're a budding enthusiast or a seasoned coder, Beyond Bytes offers a
+            unique opportunity to explore the latest trends, tools, and techniques
+            in technology. Join us to unlock your potential and transform ideas
+            into reality!
+          </p>
 
-        {/* Toggle Button */}
-        <div className="relative flex items-center justify-center mb-10">
-          <div
-            className="w-40 h-10 bg-gray-700 rounded-full flex items-center cursor-pointer p-1"
-            onClick={toggleYear}
-          >
+          {/* Toggle Button */}
+          <div className="relative flex items-center justify-center mb-10 pt-4">
             <div
-              className={`w-1/2 h-8 bg-purple-500 rounded-full text-white font-Outfit flex items-center justify-center transition-all duration-300 ${
-                year === 2025 ? "translate-x-full" : ""
-              }`}
+              className="w-40 h-10 bg-gray-700 rounded-full flex items-center cursor-pointer p-1"
+              onClick={toggleYear}
             >
-              {year}
+              <div
+                className={`w-1/2 h-8 bg-cyan-500 rounded-full text-white font-Outfit flex items-center justify-center transition-all duration-300 ${year === 2025 ? "translate-x-full" : ""
+                  }`}
+              >
+                {year}
+              </div>
             </div>
           </div>
         </div>
@@ -90,15 +92,15 @@ const Wrkshop = () => {
         {/* 2024 Section */}
         {year === 2024 && (
           <section className="w-full flex flex-col items-center mb-12">
-            <div className="w-full max-w-7xl flex flex-col sm:flex-row items-center gap-6 px-4 mb-8">
-              <div className="w-full sm:w-[70%] aspect-square max-h-[38rem] rounded-xl border border-purple-400 shadow-lg overflow-hidden">
+            <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center gap-6 px-4 mb-8">
+              <div className="w-full lg:w-[70%] aspect-square lg:aspect-auto lg:h-[38rem] rounded-xl border-2 border-cyan-400 drop-shadow-[0_0_10px_rgba(79,209,255,0.3)] shadow-lg overflow-hidden">
                 <img
                   src={frame2024}
                   alt="Main 2024"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-full sm:w-[30%] aspect-[9/16] max-h-[38rem] rounded-xl border border-purple-400 shadow-lg overflow-hidden">
+              <div className="w-full lg:w-[30%] aspect-[9/16] lg:h-[38rem] rounded-xl border-2 border-cyan-400 drop-shadow-[0_0_10px_rgba(79,209,255,0.3)] shadow-lg overflow-hidden">
                 <video
                   src="https://ik.imagekit.io/igsnxowfs/events/2023-24/Beyond%20Bytes(workshop)/beyond%20bytes%2023-24.mp4?updatedAt=1760809480856"
                   controls
@@ -111,19 +113,15 @@ const Wrkshop = () => {
               </div>
             </div>
 
-            <div
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-7xl w-full px-4"
-              style={{ gridAutoRows: "200px" }}
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] sm:auto-rows-[300px] md:auto-rows-[350px] gap-6 max-w-7xl mx-auto px-4 pb-20">
               {images2024.map((photo, i) => (
-                <img
-                  key={i}
-                  src={photo}
-                  className={`object-cover w-full h-full rounded-xl ${
-                    i === 0 ? "col-span-2 row-span-2" : ""
-                  }`}
-                  alt={`2024-${i}`}
-                />
+                <div key={i} className={`gallery-card ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}>
+                  <img
+                    src={photo}
+                    className="gallery-img"
+                    alt={`2024-${i}`}
+                  />
+                </div>
               ))}
             </div>
           </section>
@@ -132,15 +130,15 @@ const Wrkshop = () => {
         {/* 2025 Section */}
         {year === 2025 && (
           <section className="w-full flex flex-col items-center mb-20">
-            <div className="w-full max-w-7xl flex flex-col sm:flex-row items-center gap-6 px-4 mb-8">
-              <div className="w-full sm:w-[70%] aspect-square max-h-[38rem] rounded-xl border border-purple-400 shadow-lg overflow-hidden">
+            <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center gap-6 px-4 mb-8">
+              <div className="w-full lg:w-[70%] aspect-square lg:aspect-auto lg:h-[38rem] rounded-xl border-2 border-cyan-400 drop-shadow-[0_0_10px_rgba(79,209,255,0.3)] shadow-lg overflow-hidden">
                 <img
                   src={frame2025}
                   alt="Main 2025"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="w-full sm:w-[30%] aspect-[9/16] max-h-[38rem] overflow-hidden rounded-xl border border-purple-400 shadow-lg">
+              <div className="w-full lg:w-[30%] aspect-[9/16] lg:h-[38rem] overflow-hidden rounded-xl border-2 border-cyan-400 drop-shadow-[0_0_10px_rgba(79,209,255,0.3)] shadow-lg">
                 <video
                   src="https://ik.imagekit.io/igsnxowfs/events/2024-25/Beyond%20Bytes/beyond%20bytes%2024-25.mp4?updatedAt=1760808276207"
                   controls
@@ -153,19 +151,15 @@ const Wrkshop = () => {
               </div>
             </div>
 
-            <div
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-7xl w-full px-4"
-              style={{ gridAutoRows: "200px" }}
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] sm:auto-rows-[300px] md:auto-rows-[350px] gap-6 max-w-7xl mx-auto px-4 pb-20">
               {images2025.map((photo, i) => (
-                <img
-                  key={i}
-                  src={photo}
-                  className={`object-cover w-full h-full rounded-xl ${
-                    i === 0 ? "col-span-2 row-span-2" : ""
-                  }`}
-                  alt={`2025-${i}`}
-                />
+                <div key={i} className={`gallery-card ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}>
+                  <img
+                    src={photo}
+                    className="gallery-img"
+                    alt={`2025-${i}`}
+                  />
+                </div>
               ))}
             </div>
           </section>
