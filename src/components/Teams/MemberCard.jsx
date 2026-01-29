@@ -1,6 +1,7 @@
 import React from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import Skeleton from "@mui/material/Skeleton";
 
 const MemberCard = ({
@@ -8,6 +9,7 @@ const MemberCard = ({
   designation,
   instagramUrl,
   linkedinUrl,
+  githubUrl,
   avatar,
   loading,
 }) => {
@@ -100,6 +102,16 @@ const MemberCard = ({
                   className="text-[#58C8E8] hover:text-[#7FD9F2] transition-colors"
                 >
                   <InstagramIcon fontSize="small" />
+                </a>
+              )}
+              {githubUrl && (
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#58C8E8] hover:text-[#7FD9F2] transition-colors"
+                >
+                  <GitHubIcon fontSize="small" />
                 </a>
               )}
               {linkedinUrl && (
