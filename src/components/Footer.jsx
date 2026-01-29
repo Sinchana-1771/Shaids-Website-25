@@ -38,7 +38,7 @@ export function Footer({ show = true }) {
                 className="text-sm leading-relaxed font-sora font-light"
                 style={{ color: "#9FB1C8" }}
               >
-                in AI & Data Science through innovation.
+                Empowering in AI & Data Science through innovation.
                 <br className="hidden sm:block" />
                 Join us in learning and collaboration.
               </p>
