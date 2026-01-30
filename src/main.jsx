@@ -45,7 +45,7 @@ createRoot(document.getElementById("root")).render(
           {/* <Route path="hackhive" element={<Hackathon />} /> */}
           <Route path="/milestone" element={<Milestone />} />
           <Route path="/workshop" element={<Wrkshop />} />
-          {/* <Route path="/hackive" element={<Hackive />} /> */}
+          <Route path="/hackive" element={<Hackive />} /> 
           <Route path="/beyond-bytes" element={<BeyondBytes />} />
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/credits" element={<Credits />} />
