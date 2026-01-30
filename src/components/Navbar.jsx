@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import HackHIveButton from "./HackHIveButton";
 import { useRef, useEffect } from "react";
-
+// import { Button } from "@/components/ui/button";
 // Custom hook to track last route
 function useLastRoute() {
   const location = useLocation();
@@ -30,6 +31,7 @@ export function Navbar({ show }) {
       className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 sm:py-6 flex items-center justify-between backdrop-blur-md transition-all duration-700 ${show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}
       style={{ background: "transparent", borderBottom: "none" }}
     >
+      {/* Left: Logo or Back Button */}
       {location.pathname === "/" ? (
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <div
@@ -61,6 +63,7 @@ export function Navbar({ show }) {
           <span className="font-sora text-cyan-300 text-base">Back</span>
         </button>
       )}
+
       <div className="hidden md:flex items-center gap-8">
         {[
           { name: "Home", path: "/" },
@@ -77,6 +80,12 @@ export function Navbar({ show }) {
           </Link>
         ))}
       </div>
+
+      {/* <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-full pointer-events-none">
+        <div className="pointer-events-auto">
+          <HackHIveButton />
+        </div>
+      </div> */}
       <button
         className="md:hidden p-2"
         style={{ color: "#C7D2E0" }}
