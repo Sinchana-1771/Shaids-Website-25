@@ -47,13 +47,13 @@ const Wrkshop = () => {
       <Navbar show={true} />
 
       {/* Back Button to Events Page */}
-      <button
+      {/* <button
         onClick={() => navigate("/events")}
         className="fixed top-4 left-6 sm:left-20 z-50 flex items-center text-white hover:text-cyan-400 transition-colors"
       >
         <ArrowLeft className="w-8 h-8 mr-3" />
         <span className="hidden sm:inline font-Outfit"></span>
-      </button>
+      </button> */}
 
       {/* Main Content */}
       <div className="bg-bgGradient min-h-screen">

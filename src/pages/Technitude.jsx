@@ -34,13 +34,13 @@ const Technitude = () => {
     <>
       <Navbar show={true} />
       {/* Back Button to Events Page */}
-      <button
+      {/* <button
         onClick={() => navigate("/events")}
         className="fixed top-4 left-20 sm:left-30 z-50 flex items-center text-white hover:text-cyan-400 transition-colors"
       >
         <ArrowLeft className="w-8 h-8 mr-3" />
         <span className="hidden sm:inline font-Outfit"></span>
-      </button>
+      </button> */}
       <div className="bg-bgGradient min-h-screen">
         <div className="event-detail-hero">
           <h1 className="text-cyan-400 text-3xl sm:text-5xl lg:text-8xl text-center font-NordBold mb-6 drop-shadow-[0_0_15px_rgba(79,209,255,0.4)]">

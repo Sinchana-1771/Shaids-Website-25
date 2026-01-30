@@ -195,70 +195,114 @@ export function AboutPage() {
     <div className="min-h-screen w-full bg-[#020617] overflow-x-hidden">
       <Background booted={true} />
       <Navbar show={true} />
-      
+
       <main className="pt-24 pb-20">
-        <section ref={aboutRef} onMouseMove={onMove} className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-24">
+        <section
+          ref={aboutRef}
+          onMouseMove={onMove}
+          className="relative z-10 px-4 sm:px-6 md:px-12 lg:px-24"
+        >
           <div className="max-w-6xl mx-auto">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group overflow-hidden rounded-[2.5rem] p-1 transition-all duration-500 mb-16" 
-              style={{ background: 'transparent', border: 'none', backdropFilter: 'none' }}
+              className="relative group overflow-hidden rounded-[2.5rem] p-1 transition-all duration-500 mb-16"
+              style={{
+                background: "transparent",
+                border: "none",
+                backdropFilter: "none",
+              }}
             >
               <div className="absolute inset-0 bg-transparent" />
-              <div 
+              <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.4rem] pointer-events-none"
-                style={{ background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(76,195,230,0.15) 0%, transparent 65%)` }}
+                style={{
+                  background: `radial-gradient(circle at ${mouse.x}% ${mouse.y}%, rgba(76,195,230,0.15) 0%, transparent 65%)`,
+                }}
               />
               <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                 <div className="relative shrink-0">
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: [0, 5, -5, 0], scale: 1.05 }}
                     transition={{ duration: 0.5 }}
                     className="w-32 h-32 md:w-44 md:h-44 rounded-3xl overflow-hidden shadow-2xl relative z-10 p-0.5 bg-gradient-to-br from-[#4CC3E6]/40 to-cyan-900/40"
                   >
                     <div className="w-full h-full rounded-[1.4rem] overflow-hidden bg-transparent flex items-center justify-center p-4">
-                      <img src={LOGO} alt="SHAIDS Logo" className="w-full h-full object-contain saturate-150" />
+                      <img
+                        src={LOGO}
+                        alt="SHAIDS Logo"
+                        className="w-full h-full object-contain saturate-150"
+                      />
                     </div>
                   </motion.div>
                   <div className="absolute -inset-4 bg-cyan-500/10 blur-3xl rounded-full opacity-50 animate-pulse" />
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
                     className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-6"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 font-semibold font-sora">About Our Community</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 font-semibold font-sora">
+                      About Our Community
+                    </span>
                   </motion.div>
-                  <motion.h2 
+                  <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight font-outfit"
                   >
-                    A Student Community <span className="premium-text italic text-cyan-400">for Geeks</span>
+                    A Student Community{" "}
+                    <span className="premium-text italic text-cyan-400">
+                      for Geeks
+                    </span>
                   </motion.h2>
-                  <p className="text-base md:text-lg leading-relaxed text-slate-300 font-sora font-light" style={{ maxWidth: '650px' }}>
-                    SHAIDS (Student Hive of Artificial Intelligence and Data Science) at DMCE is a dynamic community dedicated to fostering innovation and technical excellence. We empower students to explore cutting-edge technologies, collaborate on impactful projects, and build a strong foundation in the world of AI and Data Science.
+                  <p
+                    className="text-base md:text-lg leading-relaxed text-slate-300 font-sora font-light"
+                    style={{ maxWidth: "650px" }}
+                  >
+                    The Student Hive of Artificial Intelligence and Data
+                    Science, an exciting initiative driven by passionate
+                    students. Established in 2023, SHAIDS is dedicated to
+                    fostering a vibrant community that explores the fascinating
+                    realms of AI and Data Science while embracing the spirit of
+                    Collaboration. At SHAIDS, our goal is to enrich the college
+                    experience for students by conducting a diverse range of
+                    events encompassing technical, cultural, and sports
+                    activities. We aim to provide opportunities for students to
+                    enhance their skills, showcase their talents, and engage in
+                    a holistic learning journey.
                   </p>
                   <div className="mt-10 flex items-center justify-center md:justify-start gap-4 sm:gap-8 font-sora">
                     <div className="flex flex-col items-center md:items-start group/stat">
-                      <span className="text-xl sm:text-2xl font-bold text-white mb-0.5 font-sora group-hover/stat:text-cyan-400 transition-colors">2024</span>
-                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">Founded</span>
+                      <span className="text-xl sm:text-2xl font-bold text-white mb-0.5 font-sora group-hover/stat:text-cyan-400 transition-colors">
+                        2023
+                      </span>
+                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">
+                        Founded
+                      </span>
                     </div>
                     <div className="w-px h-8 bg-white/10" />
                     <div className="flex flex-col items-center md:items-start group/stat">
-                      <span className="text-xl sm:text-2xl font-bold text-white mb-0.5 font-sora group-hover/stat:text-cyan-400 transition-colors">100+</span>
-                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">Members</span>
+                      <span className="text-xl sm:text-2xl font-bold text-white mb-0.5 font-sora group-hover/stat:text-cyan-400 transition-colors">
+                        100+
+                      </span>
+                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">
+                        Members
+                      </span>
                     </div>
                     <div className="w-px h-8 bg-white/10" />
                     <div className="flex flex-col items-center md:items-start group/stat">
-                      <span className="text-xl sm:text-2xl font-bold text-white mb-0.5 font-sora group-hover/stat:text-cyan-400 transition-colors">DMCE</span>
-                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">COMMUNITY</span>
+                      <span className="text-xl sm:text-2xl font-bold text-white mb-0.5 font-sora group-hover/stat:text-cyan-400 transition-colors">
+                        AIDS
+                      </span>
+                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">
+                        COMMUNITY
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -277,13 +321,45 @@ export function AboutPage() {
 
               <div className="hidden md:block relative min-h-[520px]">
                 <Circuits hovered={hovered} booted={booted} />
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"><Reactor hovered={hovered} booted={booted} /></div>
-                {[0, 1, 2, 3].map(i => <div key={i} className={`absolute w-[36%] ${i < 2 ? 'top-[1.5%]' : 'bottom-[1.5%]'} ${i % 2 === 0 ? 'left-[1.5%]' : 'right-[1.5%]'} z-20`} onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}><Card card={CARDS[i]} hovered={hovered === i} idx={i} booted={booted} /></div>)}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                  <Reactor hovered={hovered} booted={booted} />
+                </div>
+                {[0, 1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className={`absolute w-[36%] ${i < 2 ? "top-[1.5%]" : "bottom-[1.5%]"} ${i % 2 === 0 ? "left-[1.5%]" : "right-[1.5%]"} z-20`}
+                    onMouseEnter={() => setHovered(i)}
+                    onMouseLeave={() => setHovered(null)}
+                  >
+                    <Card
+                      card={CARDS[i]}
+                      hovered={hovered === i}
+                      idx={i}
+                      booted={booted}
+                    />
+                  </div>
+                ))}
               </div>
               <div className="md:hidden relative flex flex-col items-center gap-2">
                 <MobileCircuits hovered={hovered} booted={booted} />
-                <div className="flex justify-center mb-2 relative z-10"><Reactor hovered={hovered} booted={booted} /></div>
-                {CARDS.map((c, i) => <div key={i} className="relative z-20 w-[85%]" onTouchStart={() => setHovered(i)} onTouchEnd={() => setHovered(null)}><Card card={c} hovered={hovered === i} idx={i} booted={booted} /></div>)}
+                <div className="flex justify-center mb-2 relative z-10">
+                  <Reactor hovered={hovered} booted={booted} />
+                </div>
+                {CARDS.map((c, i) => (
+                  <div
+                    key={i}
+                    className="relative z-20 w-[85%]"
+                    onTouchStart={() => setHovered(i)}
+                    onTouchEnd={() => setHovered(null)}
+                  >
+                    <Card
+                      card={c}
+                      hovered={hovered === i}
+                      idx={i}
+                      booted={booted}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -292,5 +368,5 @@ export function AboutPage() {
 
       <Footer show={true} />
     </div>
-  )
+  );
 }

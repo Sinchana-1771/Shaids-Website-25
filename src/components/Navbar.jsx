@@ -1,38 +1,66 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { useRef, useEffect } from "react";
 
+// Custom hook to track last route
+function useLastRoute() {
+  const location = useLocation();
+  const lastRoute = useRef("/");
+  const prevRoute = useRef("/");
+  useEffect(() => {
+    if (location.pathname !== lastRoute.current) {
+      prevRoute.current = lastRoute.current;
+      lastRoute.current = location.pathname;
+    }
+  }, [location.pathname]);
+  return prevRoute.current;
+}
 const LOGO =
   "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/c8671fa2-2465-4069-88ca-8b2a12bf859a/image-1768971461430.png?width=8000&height=8000&resize=contain";
 
 export function Navbar({ show }) {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const lastRoute = useLastRoute();
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 sm:py-6 flex items-center justify-between backdrop-blur-md transition-all duration-700 ${show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}
       style={{ background: "transparent", borderBottom: "none" }}
     >
-      <Link to="/" className="flex items-center gap-2 sm:gap-3">
-        <div
-          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg"
-          style={{
-            border: "2px solid rgba(76,195,230,0.5)",
-            boxShadow: "0 0 20px rgba(76,195,230,0.3)",
-          }}
+      {location.pathname === "/" ? (
+        <Link to="/" className="flex items-center gap-2 sm:gap-3">
+          <div
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-lg"
+            style={{
+              border: "2px solid rgba(76,195,230,0.5)",
+              boxShadow: "0 0 20px rgba(76,195,230,0.3)",
+            }}
+          >
+            <img
+              src={LOGO}
+              alt="SHAIDS Logo"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span
+            className="font-semibold text-lg sm:text-xl tracking-wide font-sora"
+            style={{ color: "#4CC3E6" }}
+          >
+            SHAIDS
+          </span>
+        </Link>
+      ) : (
+        <button
+          className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#020617]/80 border border-cyan-400/30 shadow-lg hover:bg-[#172554]/80 transition-all"
+          onClick={() => navigate(-1)}
         >
-          <img
-            src={LOGO}
-            alt="SHAIDS Logo"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <span
-          className="font-semibold text-lg sm:text-xl tracking-wide font-sora"
-          style={{ color: "#4CC3E6" }}
-        >
-          SHAIDS
-        </span>
-      </Link>
+          <ArrowLeft className="w-6 h-6 text-cyan-400" />
+          <span className="font-sora text-cyan-300 text-base">Back</span>
+        </button>
+      )}
       <div className="hidden md:flex items-center gap-8">
         {[
           { name: "Home", path: "/" },

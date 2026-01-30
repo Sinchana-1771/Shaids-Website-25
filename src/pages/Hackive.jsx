@@ -26,7 +26,7 @@ const Hackive = () => {
             <Navbar show={true} />
 
             {/* Back Button */}
-            <button
+            {/* <button
                 onClick={() => navigate("/events")}
                 className="fixed top-4 left-6 sm:left-20 z-50 flex items-center gap-2 text-white hover:text-cyan-400 transition-colors group"
             >
@@ -34,7 +34,7 @@ const Hackive = () => {
                     <ArrowLeft className="w-5 h-5" />
                 </div>
                 <span className="hidden sm:inline font-semibold">Back to Events</span>
-            </button>
+            </button> */}
 
             <div className="min-h-screen bg-gradient-to-b from-[#000000] via-[#0a0a1a] to-[#0d1a2a]">
                 {/* Hero Section */}

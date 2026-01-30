@@ -34,16 +34,16 @@ export default function Faculty() {
       <Navbar show={true} />
 
       {/* Back Button */}
-      <button
+      {/* <button
         onClick={() => navigate(-1)}
         className="fixed top-4 left-20 z-50 flex items-center text-white hover:text-primary-cyan transition-colors"
       >
         <ArrowLeft className="w-8 h-8 mr-3" />
         <span className="hidden sm:inline font-semibold"></span>
-      </button>
+      </button> */}
 
       {/* Faculty Section */}
-      <div className="bg-gradient-to-br from-midnight-navy via-deep-indigo to-dark-slate-blue flex flex-col items-center justify-center min-h-screen h-full py-20 px-4">
+      <div className="bg-gradient-to-br from-midnight-navy via-deep-indigo mt-7 to-dark-slate-blue flex flex-col items-center justify-center min-h-screen h-full py-20 px-4">
         <h1 className="text-white text-3xl md:text-4xl font-NordBold text-center mb-12">
           FACULTY & MENTORS
         </h1>

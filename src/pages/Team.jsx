@@ -20,7 +20,7 @@ const Team = () => {
       <Navbar show={true} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden mt-7">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1A2C46_0%,transparent_55%)]" />
 
         <div className="relative max-w-[1280px] mx-auto px-6 pt-16 pb-20 flex flex-col lg:flex-row items-center justify-between">

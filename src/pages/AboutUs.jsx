@@ -28,7 +28,14 @@ function AboutUs() {
     <>
       <Navbar />
 
-      <button onClick={() => navigate(-1)} className="fixed top-4 left-12 sm:left-20 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"> <ArrowLeft className="w-8 h-8 mr-3" /> <span className="hidden sm:inline font-semibold"></span></button>
+      <button
+        onClick={() => navigate(-1)}
+        className="fixed top-4 left-12 sm:left-20 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"
+      >
+        {" "}
+        <ArrowLeft className="w-8 h-8 mr-3" />{" "}
+        <span className="hidden sm:inline font-semibold"></span>
+      </button>
 
       <div className="min-h-screen bg-bgGradient text-white">
         {/* Hero */}
@@ -40,10 +47,16 @@ function AboutUs() {
               ABOUT SHAIDS
             </h1>
             <p className="text-xl leading-relaxed">
-              Welcome to SHAIDS, the Student Hive for Artificial Intelligence
-              and Data Science! Founded in 2023, SHAIDS is a student-led
-              initiative dedicated to building a vibrant community passionate
-              about AI and Data Science.
+              The Student Hive of Artificial Intelligence and Data Science, an
+              exciting initiative driven by passionate students. Established in
+              2023, SHAIDS is dedicated to fostering a vibrant community that
+              explores the fascinating realms of AI and Data Science while
+              embracing the spirit of Collaboration. At SHAIDS, our goal is to
+              enrich the college experience for students by conducting a diverse
+              range of events encompassing technical, cultural, and sports
+              activities. We aim to provide opportunities for students to
+              enhance their skills, showcase their talents, and engage in a
+              holistic learning journey.
             </p>
           </div>
 
@@ -72,26 +85,52 @@ function AboutUs() {
 
         {/* Explore */}
         <section className="container mx-auto px-4 py-20">
-          <h2 className="text-4xl font-bold text-center mb-16">EXPLORE WITH US</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">
+            EXPLORE WITH US
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ExploreCard
-              icon={<Bot size={48} strokeWidth={1.6} className="text-[#4c2a9e] w-12 h-12" />}
+              icon={
+                <Bot
+                  size={48}
+                  strokeWidth={1.6}
+                  className="text-[#4c2a9e] w-12 h-12"
+                />
+              }
               title="Technical Growth"
               description="Explore AI and Data Science with workshops, hackathons, and expert talks."
             />
             <ExploreCard
-              icon={<Palette size={48} strokeWidth={1.6} className="text-[#4c2a9e] w-12 h-12" />}
+              icon={
+                <Palette
+                  size={48}
+                  strokeWidth={1.6}
+                  className="text-[#4c2a9e] w-12 h-12"
+                />
+              }
               title="Cultural Creativity"
               description="Showcase talents through events, exhibitions, and talent shows."
             />
             <ExploreCard
-              icon={<Dumbbell size={48} strokeWidth={1.6} className="text-[#4c2a9e] w-12 h-12" />}
+              icon={
+                <Dumbbell
+                  size={48}
+                  strokeWidth={1.6}
+                  className="text-[#4c2a9e] w-12 h-12"
+                />
+              }
               title="Sports & Fitness"
               description="Stay active with tournaments and fitness activities."
             />
             <ExploreCard
-              icon={<Users size={48} strokeWidth={1.6} className="text-[#4c2a9e] w-12 h-12" />}
+              icon={
+                <Users
+                  size={48}
+                  strokeWidth={1.6}
+                  className="text-[#4c2a9e] w-12 h-12"
+                />
+              }
               title="Community Building"
               description="Join a network of like-minded peers for collaboration and support."
             />
@@ -124,7 +163,11 @@ function AboutUs() {
                   <h2 className="text-4xl font-bold">
                     SHAIDS <span className="text-[#b19eff]">MAGAZINE</span>
                   </h2>
-                  <img src={qr} alt="Join SHAIDS QR Code" className="size-24 sm:size-32" />
+                  <img
+                    src={qr}
+                    alt="Join SHAIDS QR Code"
+                    className="size-24 sm:size-32"
+                  />
                 </div>
               </div>
             </div>

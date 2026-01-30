@@ -9,7 +9,7 @@ import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
+import { Navbar } from "../components/Navbar";
 import axios from "axios";
 
 const ContactUs = () => {
@@ -31,7 +31,7 @@ const ContactUs = () => {
       const { email, fullName, phoneNumber, Message } = data;
       await axios.post(
         import.meta.env.VITE_BACKEND_URL || "http://localhost:3000/api/contact",
-        { fullName, email, phoneNumber, Message }
+        { fullName, email, phoneNumber, Message },
       );
       reset();
       toast.success("Sent Successfully!");
@@ -45,16 +45,16 @@ const ContactUs = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar show={true} />
 
       {/* Back Button */}
-      <button
+      {/* <button
         onClick={() => navigate(-1)}
         className="fixed top-5 left-20 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"
       >
         <ArrowLeft className="w-6 h-6 mr-2" />
         <span className="hidden sm:inline font-semibold"></span>
-      </button>
+      </button> */}
 
       {/* Main Container */}
       <div className="bg-bgGradient text-white font-Outfit flex flex-col h-full px-6 xl:flex-row justify-around items-center sm:px-16 py-20 xl:px-32 overflow-hidden">
@@ -67,7 +67,7 @@ const ContactUs = () => {
           </h1>
           <p className="text-sm sm:text-lg md:text-xl">
             Or just reach out manually to{" "}
-            <span className="text-[#9654F4] underline">
+            <span className="text-[#4CC3E6] underline">
               shaids_dmce@dmce.ac.in
             </span>
           </p>
@@ -80,7 +80,10 @@ const ContactUs = () => {
 
         {/* Contact Form */}
         <div className="flex flex-col w-full xl:w-1/3 mt-10 xl:mt-0">
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-5"
+          >
             {/* Full Name */}
             <span className="flex flex-col gap-2">
               Full name
@@ -183,7 +186,7 @@ const ContactUs = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-buttonGradient w-max px-4 py-2 rounded-lg self-end cursor-pointer flex items-center gap-2"
+              className="bg-[#4CC3E6]  border-blue-900 w-max px-4 py-2 rounded-lg self-end cursor-pointer flex items-center gap-2"
               disabled={loading}
             >
               {loading ? (
