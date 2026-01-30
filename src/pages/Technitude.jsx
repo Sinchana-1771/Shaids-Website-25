@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
 
 const Technitude = () => {
   const reelURL =
@@ -29,95 +29,101 @@ const Technitude = () => {
     console.log("Button clicked! This is a log message.");
     Navigate(-1);
   };
-  
+
   return (
     <>
-    <Navbar/>
-    {/* Back Button to Events Page */}
-      <button
+      <Navbar show={true} />
+      {/* Back Button to Events Page */}
+      {/* <button
         onClick={() => navigate("/events")}
-        className="fixed top-4 left-20 sm:left-30 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"
+        className="fixed top-4 left-20 sm:left-30 z-50 flex items-center text-white hover:text-cyan-400 transition-colors"
       >
         <ArrowLeft className="w-8 h-8 mr-3" />
         <span className="hidden sm:inline font-Outfit"></span>
-      </button>
-      <div className="bg-bgGradient min-h-screen flex flex-col items-center w-full overflow-hidden">
-            <h1 className="text-purple-400 text-3xl sm:text-4xl md:text-6xl mt-16 text-center font-NordBold mb-6">
-          Technitude
-        </h1>
+      </button> */}
+      <div className="bg-bgGradient min-h-screen">
+        <div className="event-detail-hero">
+          <h1 className="text-cyan-400 text-3xl sm:text-5xl lg:text-8xl text-center font-NordBold mb-6 drop-shadow-[0_0_15px_rgba(79,209,255,0.4)]">
+            Technitude
+          </h1>
+        </div>
 
-        <p className="text-white text-center sm:text-left font-Outfit max-w-3xl md:max-w-6xl mb-8 px-4 leading-relaxed">
+        <p className="text-white text-center sm:text-left font-Outfit max-w-4xl lg:max-w-6xl mb-8 px-4 leading-relaxed mx-auto">
           Technitude is a high-energy, two-day technical event packed with fun,
           challenges, and exciting competitions! It’s where technology meets
           thrill, bringing together students to test their skills, compete in
           unique tech-based games, and enjoy an electrifying atmosphere.
         </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-6xl px-4 mb-12">
-        <img
-          src={image10url}
-          alt="Technitude Main Event"
-          className="w-full sm:w-[76%] h-80 sm:h-[24rem] md:h-[28rem] object-cover rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-500 border border-purple-400"
-        />
-
-        <div onClick={openReelInNewTab} className="w-full sm:w-[40%] cursor-pointer">
-          <video
-            src={reelURL}
-            loop
-            muted
-            autoPlay
-            controls
-            playsInline
-            className="w-full h-80 sm:h-[24rem] md:h-[28rem] object-cover rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-500 border border-purple-400"
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 w-full max-w-6xl px-4 mb-12 mx-auto">
+          <img
+            src={image10url}
+            alt="Technitude Main Event"
+            className="w-full lg:w-[76%] h-64 sm:h-80 md:h-[28rem] object-cover rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-500 border-2 border-cyan-400 drop-shadow-[0_0_10px_rgba(79,209,255,0.3)]"
           />
-        </div> 
-      </div>
 
-      <div
-  className="
-    grid 
-    grid-cols-2 
-    sm:grid-cols-3 
-    lg:grid-cols-4 
-    auto-rows-[140px] 
-    sm:auto-rows-[160px] 
-    md:auto-rows-[180px]
-    gap-3 
-    w-full 
-    max-w-6xl 
-    px-4 
-    mb-14 
-    [grid-auto-flow:dense]
-  "
->
-
-        <div className="col-span-2 row-span-2 rounded-lg overflow-hidden border border-purple-400">
-          <img src={image1url} alt="Technitude Event 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div onClick={openReelInNewTab} className="w-full lg:w-[40%] cursor-pointer">
+            <video
+              src={reelURL}
+              loop
+              muted
+              autoPlay
+              controls
+              playsInline
+              className="w-full h-80 lg:h-[28rem] object-cover rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-500 border-2 border-cyan-400 drop-shadow-[0_0_10px_rgba(79,209,255,0.3)]"
+            />
+          </div>
         </div>
 
-        <div className="rounded-lg overflow-hidden border border-purple-400">
-          <img src={image9url} alt="Technitude Event 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        </div>
+        <div
+          className="
+            grid 
+            grid-cols-2 
+            md:grid-cols-3 
+            lg:grid-cols-4 
+            auto-rows-[250px]
+            sm:auto-rows-[300px]
+            md:auto-rows-[330px]
+            lg:auto-rows-[350px]
+            gap-4 
+            w-full 
+            max-w-7xl 
+            px-4 
+            mb-14
+            mx-auto
+          "
+        >
+          {/* Large Featured Image */}
+          <div className="col-span-2 row-span-2 gallery-card">
+            <img src={image1url} alt="Technitude Event 1" className="gallery-img" />
+          </div>
 
-        <div className="rounded-lg overflow-hidden border border-purple-400">
-          <img src={image3url} alt="Technitude Event 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        </div>
-        <div className="col-span-2 rounded-lg overflow-hidden border border-purple-400">
-          <img src={image5url} alt="Technitude Event 5" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        </div>
+          <div className="gallery-card">
+            <img src={image9url} alt="Technitude Event 2" className="gallery-img" />
+          </div>
 
-        <div className="rounded-lg overflow-hidden border border-purple-400">
-          <img src={image6url} alt="Technitude Event 6" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        </div>
+          <div className="gallery-card">
+            <img src={image3url} alt="Technitude Event 3" className="gallery-img" />
+          </div>
 
-        <div className="col-span-2 rounded-lg overflow-hidden border border-purple-400">
-          <img src={image7url} alt="Technitude Event 7" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        </div>
+          {/* Wide Image */}
+          <div className="col-span-2 gallery-card">
+            <img src={image5url} alt="Technitude Event 5" className="gallery-img" />
+          </div>
 
-        <div className="rounded-lg overflow-hidden border border-purple-400">
-          <img src={image8url} alt="Technitude Event 8" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div className="gallery-card">
+            <img src={image6url} alt="Technitude Event 6" className="gallery-img" />
+          </div>
+
+          <div className="gallery-card">
+            <img src={image8url} alt="Technitude Event 8" className="gallery-img" />
+          </div>
+
+          {/* Another Wide Image */}
+          <div className="col-span-2 gallery-card">
+            <img src={image7url} alt="Technitude Event 7" className="gallery-img" />
+          </div>
         </div>
-      </div>
       </div>
       <Footer />
     </>

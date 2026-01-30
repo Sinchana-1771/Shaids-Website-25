@@ -1,144 +1,56 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // <-- IMPORTED
-import { ArrowLeft } from "lucide-react"; // <-- IMPORTED
 import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
-import { Instagram, GitHub, LinkedIn } from "@mui/icons-material";
+import { Navbar } from "../components/Navbar";
+import MemberCard from "../components/Teams/MemberCard";
+import developers from "../data/developers";
 
-// Unused local imports removed for clarity
-// import aayush from "../assets/images/credits/ayush.jpg";
-// ... (other unused imports) ...
-
-const creators = [
-  {
-    id: 1,
-    name: "Ayush Bhosale",
-    image: "https://ik.imagekit.io/igsnxowfs/credits/ayush.jpg?updatedAt=1760495479216",
-    instagram: "https://www.instagram.com/ayush._.bhosale/",
-    linkedin: "https://www.linkedin.com/in/ayush-bhosale-207ba7250/",
-  },
-  {
-    id: 5,
-    name: "Divesh Dalvi ",
-    role: " Shaids Tech Lead",
-    image: "https://ik.imagekit.io/igsnxowfs/credits/divesh-tech-head.jpg?updatedAt=1760926560244",
-    instagram: "https://www.instagram.com/dalvi.divesh/",
-    linkedin: "https://www.linkedin.com/in/divesh-dalvi/",
-  },
-  {
-    id: 6,
-    name: "Dhanushkar Guin",
-    image: "https://ik.imagekit.io/igsnxowfs/credits/Dhanush.jpg?updatedAt=1760495475709",
-    instagram: "https://www.instagram.com/dhanu._.exe",
-    linkedin: "https://www.linkedin.com/in/dhanushkar-guin-aba4212b5/",
-  },
-  {
-    id: 2,
-    name: "Nachiket Patil",
-    image: "https://ik.imagekit.io/igsnxowfs/credits/nachiket.jpg?updatedAt=1760495477652",
-    instagram: "https://www.instagram.com/nachiket_26_/",
-    linkedin: "https://www.linkedin.com/in/nachiket-patil-a610212b1/",
-  },
-  {
-    id: 4,
-    name: "Rutuja Sawant",
-    image: "https://ik.imagekit.io/igsnxowfs/credits/photo.jpg?updatedAt=1760495479666",
-    instagram: "https://www.instagram.com/rutujasawant._/",
-    linkedin: "https://www.linkedin.com/in/rutuja-sawant-3b77aa270/",
-  },
-  {
-    id: 3,
-    name: "Bhargav Gajare",
-    image: "https://ik.imagekit.io/igsnxowfs/credits/Bhargav.png?updatedAt=1760495482216",
-    instagram: "https://www.instagram.com/probablybhargav",
-    linkedin: "https://www.linkedin.com/in/bhargavsg/",
-  },
-];
-
-function CreatorCard({ name, role, image, instagram, linkedin }) {
+const Credits = () => {
   return (
-    <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6 flex flex-col items-center justify-center text-center transform transition-all hover:scale-105 cursor-pointer shadow-lg">
-      {/* Profile Image or Initial */}
-      <div className="w-24 h-24 rounded-full bg-purple-700/50 mb-4 overflow-hidden flex items-center justify-center">
-        {image ? (
-          <img
-            src={image}
-            alt={`${name}'s profile`}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <span className="text-purple-200 text-3xl font-bold">{name[0]}</span>
-        )}
-      </div>
+    <div className="min-h-screen flex flex-col bg-[#0B1220] ">
+      <Navbar show={true} />
 
-      {/* Name & Role */}
-      <h3 className="text-white font-medium text-lg">{name}</h3>
-      <p className="text-purple-200 text-sm">{role}</p>
+      {/* HERO */}
+      <section className="relative overflow-hidden mt-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1A2C46_0%,transparent_55%)]" />
 
-      {/* Social Links */}
-      <div className="flex space-x-2 mt-2">
-        {instagram && (
-          <a href={instagram} target="_blank" rel="noopener noreferrer">
-            <Instagram className="text-white cursor-pointer" />
-          </a>
-        )}
-        {linkedin && (
-          <a href={linkedin} target="_blank" rel="noopener noreferrer">
-            <LinkedIn className="text-white cursor-pointer" />
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function Credits() {
-  const navigate = useNavigate(); // <-- CALLED THE HOOK
-
-  return (
-    <>
-      <Navbar />
-      
-      {/* ADDED THE BACK BUTTON HERE */}
-      <button 
-        onClick={() => navigate(-1)} 
-        className="fixed top-24 left-8 sm:left-20 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"
-      >
-        <ArrowLeft className="w-8 h-8 mr-3" />
-        <span className="hidden sm:inline font-semibold text-lg">Back</span>
-      </button>
-
-      <div className="min-h-screen bg-bgGradient py-24 px-8 sm:px-16 lg:px-24 flex flex-col items-center">
-        <div className="max-w-screen-lg w-full">
-          {/* Heading Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-              <span className="text-white">MEET THE</span>
-
-              <span className="text-purple-500"> CREATORS</span>
-              <br />
-              <span className="text-white">OF WEBSITE</span>
+        <div className="relative max-w-[1280px] mx-auto px-6 pt-16 pb-20 flex flex-col lg:flex-row items-center justify-between">
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white font-NordMedium">
+              MEET THE <br className="hidden lg:block" />
+              <span className="text-[#4CC3E6]">DEVELOPERS!</span>
             </h1>
-          </div>
-
-          {/* Creator Cards Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-12">
-            {creators.map((creator) => (
-              <CreatorCard
-                key={creator.id}
-                name={creator.name}
-                role={creator.role}
-                image={creator.image}
-                instagram={creator.instagram}
-                linkedin={creator.linkedin}
-              />
-            ))}
+            <p className="mt-4 text-lg lg:text-xl text-[#9FB1C8] font-Outfit max-w-xl">
+              The creative minds behind SHAIDS
+            </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* DEVELOPERS GRID */}
+      <section className="relative flex-grow mt-8 mb-6 ">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1A2C46_0%,transparent_60%)]" />
+
+        <div className="relative max-w-[1280px] mx-auto px-6">
+          <div className="bg-[#0F1A2E]/80 backdrop-blur-xl border border-white/[0.08] rounded-3xl px-6 py-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+              {developers.map((developer, index) => (
+                <MemberCard
+                  key={index}
+                  name={developer.name}
+                  designation={developer.designation}
+                  avatar={developer.avatar}
+                  githubUrl={developer.githubUrl}
+                  linkedinUrl={developer.linkedinUrl}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
-    </>
+    </div>
   );
-}
+};
 
 export default Credits;

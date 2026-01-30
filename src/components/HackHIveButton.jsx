@@ -1,9 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const HackHiveButton = () => {
-  const navigate = useNavigate();
-
   const stars = [
     { id: 1, top: "-12px", left: "50%", delay: "0s" },
     { id: 2, top: "20%", left: "-12px", delay: "0.3s" },
@@ -27,7 +24,8 @@ const HackHiveButton = () => {
             bottom: star.bottom,
             // These keyframes MUST exist in your index.css
             animation: `star-pop 2.5s infinite ease-in-out ${star.delay}`,
-            filter: "drop-shadow(0 0 8px #fffdef) drop-shadow(0 0 16px rgba(168,85,247,0.8))"
+            filter:
+              "drop-shadow(0 0 8px #fffdef) drop-shadow(0 0 16px rgba(168,85,247,0.8))",
           }}
         >
           <svg viewBox="0 0 784 816" className="w-4 h-auto fill-[#fffdef]">
@@ -37,15 +35,17 @@ const HackHiveButton = () => {
       ))}
 
       {/* Main Button */}
-      <button
-        onClick={() => navigate("/hackhive")}
+      <a
+        href="https://shaids-hackhive.vercel.app/" // <-- CHANGE LINK HERE
+        target="_blank"
+        rel="noopener noreferrer"
         style={{ animation: "border-glow 3s ease-in-out infinite" }}
         className="relative z-10 w-full h-14 min-w-[200px] flex justify-center items-center px-8 
                    rounded-full cursor-pointer transition-all duration-500 transform 
                    hover:scale-105 bg-gradient-to-r from-purple-600 via-indigo-500 to-purple-700 
                    border-4 border-purple-400/50 backdrop-blur-md shadow-lg"
       >
-        <span 
+        <span
           style={{ fontFamily: "'Orbitron', sans-serif" }}
           className="font-black text-lg sm:text-xl text-white tracking-widest uppercase
                      drop-shadow-[0_0_10px_rgba(168,85,247,0.8)] 
@@ -53,7 +53,7 @@ const HackHiveButton = () => {
         >
           HACKHIVE
         </span>
-      </button>
+      </a>
     </div>
   );
 };
