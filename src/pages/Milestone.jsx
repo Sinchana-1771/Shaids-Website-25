@@ -23,48 +23,50 @@ const Milestone = () => {
 
   return (
     <>
-      <Navbar show={true}/>
+      <Navbar show={true} />
 
       {/* Back Button */}
       <button
-        onClick={() => navigate(-1)}
-        className="fixed top-4 left-12 sm:left-20 z-50 flex items-center text-white hover:text-[#b19eff] transition-colors"
+        onClick={() => navigate("/events")}
+        className="fixed top-4 left-12 sm:left-20 z-50 flex items-center text-white hover:text-cyan-400 transition-colors"
       >
         <ArrowLeft className="w-8 h-8 mr-3" />
         <span className="hidden sm:inline font-semibold"></span>
       </button>
 
       {/* Main Content */}
-      <div className="bg-bgGradient min-h-screen flex flex-col items-center px-6 md:px-12 py-20">
-        {/* Heading */}
-        <h1 className="text-purple-400 text-4xl md:text-6xl font-NordBold mb-6 text-center">
-          Milestone
-        </h1>
+      <div className="bg-bgGradient min-h-screen">
+        {/* Heading Section */}
+        <div className="event-detail-hero">
+          <h1 className="text-cyan-400 text-4xl sm:text-5xl lg:text-8xl font-NordBold mb-6 text-center drop-shadow-[0_0_15px_rgba(79,209,255,0.4)]">
+            Milestone
+          </h1>
 
-        {/* Description */}
-        <p className="text-white text-center font-Outfit max-w-3xl md:max-w-5xl mb-10 leading-relaxed">
-          <span className="text-[#A576DF] font-semibold">Milestone</span> is the
-          annual event of our college, bringing together students, faculty, and
-          industry professionals for a vibrant celebration of innovation, talent,
-          and achievement. It features a mix of technical competitions, cultural
-          performances, workshops, and guest lectures — providing a platform for
-          students to showcase their skills and creativity. The event fosters
-          learning, networking, and collaboration, making it a highlight of the
-          academic year.
-        </p>
+          {/* Description */}
+          <p className="text-white text-center font-Outfit max-w-4xl lg:max-w-5xl mb-10 leading-relaxed px-4">
+            <span className="text-cyan-400 font-semibold">Milestone</span> is the
+            annual event of our college, bringing together students, faculty, and
+            industry professionals for a vibrant celebration of innovation, talent,
+            and achievement. It features a mix of technical competitions, cultural
+            performances, workshops, and guest lectures — providing a platform for
+            students to showcase their skills and creativity. The event fosters
+            learning, networking, and collaboration, making it a highlight of the
+            academic year.
+          </p>
+        </div>
 
         {/* Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] sm:auto-rows-[300px] md:auto-rows-[350px] gap-6 max-w-7xl mx-auto px-4 pb-20">
           {images.map((src, index) => (
             <div
               key={index}
-              className="relative group overflow-hidden rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300"
+              className="gallery-card"
             >
               <img
                 src={src}
                 alt={`Milestone Event ${index + 1}`}
                 loading="lazy"
-                className="w-full h-52 object-cover rounded-xl group-hover:opacity-90 transition"
+                className="gallery-img"
               />
             </div>
           ))}
