@@ -16,8 +16,8 @@ import {
   Uint16BufferAttribute,
   Vector3,
 } from "three";
-const { degToRad } = MathUtils;
 import { pageAtom, pages } from "./UI";
+const { degToRad } = MathUtils;
 
 const easingFactor = 0.5; // Controls the speed of the easing
 const easingFactorFold = 0.3; // Controls the speed of the easing
